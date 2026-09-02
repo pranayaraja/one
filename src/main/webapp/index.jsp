@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
-  <title>Nexus · modern e‑commerce</title>
+  <title>Nova · modern e‑commerce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -11,14 +11,14 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #f7faff;
+      --bg: #f5f9ff;
       --primary: #0a2647;
-      --accent: #2d7aff;
-      --accent-soft: #e3edff;
-      --muted: #5b6f87;
+      --accent: #3b7dff;
+      --accent-soft: #dfebff;
+      --muted: #5d738e;
       --surface: #ffffff;
       --shadow: 0 12px 30px rgba(0, 20, 40, 0.06);
-      --radius: 18px;
+      --radius: 20px;
       --container: 1280px;
     }
     body {
@@ -35,9 +35,9 @@
       padding: 0 24px;
     }
 
-    /* header – airy & clean */
+    /* header – light & airy */
     header {
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.85);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(0,0,0,0.02);
       position: sticky;
@@ -93,7 +93,7 @@
       min-width: 200px;
       transition: 0.2s;
     }
-    .search-wrap:focus-within { border-color: var(--accent); box-shadow: 0 4px 14px rgba(45, 122, 255, 0.12); }
+    .search-wrap:focus-within { border-color: var(--accent); box-shadow: 0 4px 14px rgba(59, 125, 255, 0.12); }
     .search-wrap input {
       border: none;
       background: transparent;
@@ -135,7 +135,7 @@
       border-radius: 30px;
       display: grid;
       place-items: center;
-      box-shadow: 0 4px 10px rgba(45, 122, 255, 0.3);
+      box-shadow: 0 4px 10px rgba(59, 125, 255, 0.3);
     }
     .mobile-toggle {
       display: none;
@@ -146,7 +146,7 @@
       color: var(--primary);
     }
 
-    /* hero – warm & inviting */
+    /* hero – welcoming */
     .hero {
       background: linear-gradient(145deg, #0b2b4a 0%, #1a3e62 100%);
       color: white;
@@ -186,9 +186,9 @@
     .btn-primary {
       background: var(--accent);
       color: white;
-      box-shadow: 0 8px 24px rgba(45, 122, 255, 0.3);
+      box-shadow: 0 8px 24px rgba(59, 125, 255, 0.3);
     }
-    .btn-primary:hover { background: #1a63e0; transform: scale(1.02); }
+    .btn-primary:hover { background: #2a6aff; transform: scale(1.02); }
     .btn-ghost {
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.18);
@@ -388,7 +388,7 @@
   <div class="container header-inner">
     <div style="display:flex;align-items:center;gap:10px;">
       <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
-      <a class="brand" href="#"><i class="fas fa-cube"></i> Nexus<span>.</span></a>
+      <a class="brand" href="#"><i class="fas fa-cube"></i> Nova<span>.</span></a>
     </div>
     <nav class="main-nav" id="mainNav">
       <ul>
@@ -533,7 +533,7 @@
 <footer>
   <div class="container" style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;">
     <div>
-      <div style="font-weight:700;font-size:1.2rem;display:flex;align-items:center;gap:6px;"><i class="fas fa-cube" style="color:var(--accent);"></i> Nexus</div>
+      <div style="font-weight:700;font-size:1.2rem;display:flex;align-items:center;gap:6px;"><i class="fas fa-cube" style="color:var(--accent);"></i> Nova</div>
       <p class="muted" style="max-width:280px;margin-top:6px;">Modern e‑commerce experience · built with care.</p>
       <div style="margin-top:12px;display:flex;gap:12px;">
         <a class="icon-btn" href="#"><i class="fab fa-twitter"></i></a>
@@ -546,7 +546,7 @@
       <div><div style="font-weight:600;">Support</div><div class="muted" style="line-height:2;">Help<br>Returns<br>Contact</div></div>
     </div>
   </div>
-  <div class="container" style="text-align:center;margin-top:24px;font-size:0.8rem;color:var(--muted);">© <span id="year"></span> Nexus · all rights reserved</div>
+  <div class="container" style="text-align:center;margin-top:24px;font-size:0.8rem;color:var(--muted);">© <span id="year"></span> Nova · all rights reserved</div>
 </footer>
 
 <script>
@@ -600,7 +600,7 @@
         const el = document.createElement('div');
         el.className = 'product';
         el.style.position = 'relative';
-        const badgeHtml = p.badge ? `<div style="position:absolute;margin:10px;z-index:2;"><span style="background:${p.badge.startsWith('-') ? '#ff4d6a' : '#2d7aff'};color:white;padding:4px 14px;border-radius:30px;font-weight:700;font-size:0.7rem;">${p.badge}</span></div>` : '';
+        const badgeHtml = p.badge ? `<div style="position:absolute;margin:10px;z-index:2;"><span style="background:${p.badge.startsWith('-') ? '#ff4d6a' : '#3b7dff'};color:white;padding:4px 14px;border-radius:30px;font-weight:700;font-size:0.7rem;">${p.badge}</span></div>` : '';
         el.innerHTML = `
           ${badgeHtml}
           <img src="${p.img}" alt="${p.title}" loading="lazy">
@@ -685,4 +685,4 @@
     });
 
     // Newsletter
-    document.getElementById('
+    document.getElementById('subscribeBtn').
