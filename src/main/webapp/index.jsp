@@ -685,4 +685,60 @@
         document.getElementById('dealDays').textContent = days;
         document.getElementById('dealHours').textContent = String(hours).padStart(2,'0');
         document.getElementById('dealMinutes').textContent = String(mins).padStart(2,'0');
-        document.getElementById('dealSeconds').textContent = String(secs).padStart(2
+        document.getElementById('dealSeconds').textContent = String(secs).padStart(2,'0');
+      };
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    // ---------- UI BINDINGS ----------
+    document.getElementById('searchBtn').addEventListener('click', () => filterProducts(searchInput.value));
+    searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') filterProducts(e.target.value); });
+
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+      const menu = document.getElementById('mobileMenu');
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.getElementById('shopNow').addEventListener('click', () => document.getElementById('productsSection').scrollIntoView({ behavior: 'smooth' }));
+    document.getElementById('exploreDeals').addEventListener('click', () => document.getElementById('deals').scrollIntoView({ behavior: 'smooth' }));
+    document.getElementById('buyDeal').addEventListener('click', () => {
+      cartCount++;
+      cartCountEl.textContent = cartCount;
+      alert('Deal added to cart!');
+    });
+
+    // Newsletter
+    document.getElementById('subscribeBtn').addEventListener('click', () => {
+      const email = document.getElementById('newsletterEmail').value.trim();
+      const msg = document.getElementById('newsletterMsg');
+      if (!email || !email.includes('@')) {
+        msg.style.display = 'block';
+        msg.textContent = 'Please enter a valid email address.';
+        msg.style.color = '#ffb3b3';
+        return;
+      }
+      msg.style.display = 'block';
+      msg.textContent = '✅ You’re subscribed!';
+      msg.style.color = '#b3e0b3';
+      document.getElementById('newsletterEmail').value = '';
+      setTimeout(() => msg.style.display = 'none', 3000);
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Category dropdown hint
+    document.getElementById('catMenuBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('.categories-grid').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // ---------- INIT ----------
+    renderCategories();
+    renderProducts(PRODUCTS);
+    setupTimer();
+  })();
+</script>
+</body>
+</html>
