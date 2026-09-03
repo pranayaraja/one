@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
   <title>Nova · modern e‑commerce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,14 +11,14 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #f5f9ff;
-      --primary: #0a2647;
-      --accent: #3b7dff;
-      --accent-soft: #dfebff;
+      --bg: #f8faff;
+      --primary: #0b1e33;
+      --accent: #2d7aff;
+      --accent-soft: #e3edff;
       --muted: #5d738e;
       --surface: #ffffff;
       --shadow: 0 12px 30px rgba(0, 20, 40, 0.06);
-      --radius: 20px;
+      --radius: 24px;
       --container: 1280px;
     }
     body {
@@ -29,16 +29,12 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
-    .container {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
-    /* header – light & airy */
+    /* header – refined, softer */
     header {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0,0,0,0.02);
       position: sticky;
       top: 0;
@@ -49,7 +45,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 14px 0;
+      padding: 12px 0;
       flex-wrap: wrap;
     }
     .brand {
@@ -61,7 +57,7 @@
       gap: 8px;
       letter-spacing: -0.3px;
     }
-    .brand i { color: var(--accent); font-size: 22px; }
+    .brand i { color: var(--accent); font-size: 24px; }
     .brand span { color: var(--accent); }
 
     nav.main-nav ul {
@@ -70,14 +66,14 @@
       list-style: none;
     }
     nav.main-nav li a {
-      padding: 8px 16px;
+      padding: 8px 18px;
       border-radius: 40px;
       font-weight: 500;
       font-size: 0.95rem;
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: 0.15s;
+      transition: 0.2s;
       color: var(--primary);
     }
     nav.main-nav li a:hover { background: var(--accent-soft); color: var(--accent); }
@@ -86,14 +82,14 @@
       background: white;
       border: 1px solid #e5ecf5;
       border-radius: 60px;
-      padding: 5px 12px 5px 20px;
+      padding: 4px 12px 4px 20px;
       display: flex;
       align-items: center;
       gap: 8px;
       min-width: 200px;
       transition: 0.2s;
     }
-    .search-wrap:focus-within { border-color: var(--accent); box-shadow: 0 4px 14px rgba(59, 125, 255, 0.12); }
+    .search-wrap:focus-within { border-color: var(--accent); box-shadow: 0 4px 16px rgba(45, 122, 255, 0.12); }
     .search-wrap input {
       border: none;
       background: transparent;
@@ -108,7 +104,7 @@
       border: 0;
       color: var(--primary);
       font-size: 1.2rem;
-      padding: 6px 8px;
+      padding: 6px 10px;
       border-radius: 30px;
       cursor: pointer;
       transition: 0.15s;
@@ -135,7 +131,7 @@
       border-radius: 30px;
       display: grid;
       place-items: center;
-      box-shadow: 0 4px 10px rgba(59, 125, 255, 0.3);
+      box-shadow: 0 4px 10px rgba(45, 122, 255, 0.3);
     }
     .mobile-toggle {
       display: none;
@@ -146,14 +142,14 @@
       color: var(--primary);
     }
 
-    /* hero – welcoming */
+    /* hero – warm & welcoming */
     .hero {
       background: linear-gradient(145deg, #0b2b4a 0%, #1a3e62 100%);
       color: white;
       border-radius: 0 0 var(--radius) var(--radius);
       padding: 72px 20px 60px;
       text-align: center;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .hero h1 {
       font-family: 'Poppins', sans-serif;
@@ -175,7 +171,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 12px 30px;
+      padding: 12px 32px;
       border-radius: 60px;
       font-weight: 600;
       border: 0;
@@ -186,9 +182,9 @@
     .btn-primary {
       background: var(--accent);
       color: white;
-      box-shadow: 0 8px 24px rgba(59, 125, 255, 0.3);
+      box-shadow: 0 8px 24px rgba(45, 122, 255, 0.3);
     }
-    .btn-primary:hover { background: #2a6aff; transform: scale(1.02); }
+    .btn-primary:hover { background: #1a63f0; transform: scale(1.02); }
     .btn-ghost {
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.18);
@@ -206,7 +202,7 @@
     .section-sub { color: var(--muted); margin-top: 4px; margin-bottom: 24px; }
     .grid { display: grid; gap: 22px; }
 
-    /* categories – friendly cards */
+    /* categories – fresh cards */
     .categories-grid { grid-template-columns: repeat(6, 1fr); }
     .cat-card {
       background: white;
@@ -214,11 +210,11 @@
       padding: 22px 8px;
       text-align: center;
       box-shadow: var(--shadow);
-      transition: 0.2s;
+      transition: 0.25s;
       border: 1px solid rgba(0,0,0,0.02);
       cursor: pointer;
     }
-    .cat-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,20,40,0.07); border-color: var(--accent-soft); }
+    .cat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,20,40,0.07); border-color: var(--accent-soft); background: #fafcff; }
     .cat-card .icon { font-size: 2.1rem; color: var(--accent); margin-bottom: 4px; }
     .cat-card h4 { font-weight: 600; font-size: 1rem; }
 
@@ -229,7 +225,7 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
-      transition: 0.2s;
+      transition: 0.25s;
       border: 1px solid rgba(0,0,0,0.02);
       display: flex;
       flex-direction: column;
@@ -315,7 +311,7 @@
       scrollbar-width: thin;
     }
     .testimonial {
-      min-width: 290px;
+      min-width: 280px;
       background: white;
       padding: 20px;
       border-radius: var(--radius);
@@ -681,8 +677,4 @@
     document.getElementById('buyDeal').addEventListener('click', () => {
       cartCount++;
       cartCountEl.textContent = cartCount;
-      alert('Deal added to cart!');
-    });
-
-    // Newsletter
-    document.getElementById('subscribeBtn').
+      alert('Deal
